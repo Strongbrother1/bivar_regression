@@ -25,7 +25,6 @@ poly_model = PolynomialFeatures(degree=degree)
 
 poly_x_vals = poly_model.fit_transform(x_vals)
 
-#print(f'initial values {x_vals[0]}\nMapped to {poly_x_vals[0]}')
 
 ## Fitting Y-values
 
@@ -57,7 +56,7 @@ Actual = reg_mod.intercept_ + (test_a * example_x) + (test_b * example_y) + (tes
 Expected = y_vals[example_num]
 print('Actual value is : ', Actual)
 print('Expected value is : ', Expected)
-# check our accuracy for each degree, the lower the error the better!
+
 
 """
 Z = a + bX + cY + dX^2 + eXY + fY^2
