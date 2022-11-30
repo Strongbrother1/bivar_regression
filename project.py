@@ -57,6 +57,24 @@ Expected = y_vals[example_num]
 print('Actual value is : ', Actual)
 print('Expected value is : ', Expected)
 
+# Calculating average distance of all values
+total = 0
+x = 0
+while(x < len(df.index)):
+   example_x = x_vals[x][0]
+   example_y = x_vals[x][1]
+   test_a = reg_mod.coef_[1]
+   test_b = reg_mod.coef_[2]
+   test_a2 = reg_mod.coef_[3]
+   test_ab = reg_mod.coef_[4]
+   test_b2 = reg_mod.coef_[5]
+   Actual = reg_mod.intercept_ + (test_a * example_x) + (test_b * example_y) + (test_a2 * example_x * example_x) + (test_ab * example_x * example_y) + (test_b2 * example_y * example_y)
+   Expected = y_vals[x]
+   total += abs(Actual - Expected)
+   x += 1
+
+average_diff = total/len(df.index)
+print('Average is : ', average_diff)
 
 """
 Z = a + bX + cY + dX^2 + eXY + fY^2
