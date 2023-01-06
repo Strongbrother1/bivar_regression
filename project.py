@@ -11,6 +11,10 @@ import os
 # print(os.path.join(os.getcwd(), 'project.csv'))
 
 # Read dataframe and set values
+"""
+To change dataframe simply change line 18 "project.csv" to whatever file you need read :
+Only req is that the file is ordered in a way where it's X | Y | Z
+"""
 df = pd.read_csv("project.csv")
 
 x_vals = df[['X', 'Y']].values
